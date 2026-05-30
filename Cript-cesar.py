@@ -1,7 +1,27 @@
+import os
 import socket
 import time
 
-SERVER_IP = '10.3.30.24'  # Substitua pelo IP do servidor
+
+def load_env(path: str = '.env') -> None:
+    if not os.path.isfile(path):
+        return
+    with open(path, 'r', encoding='utf-8') as env_file:
+        for line in env_file:
+            line = line.strip()
+            if not line or line.startswith('#') or '=' not in line:
+                continue
+            key, value = line.split('=', 1)
+            key = key.strip()
+            value = value.strip().strip('"\'"')
+            if key and key not in os.environ:
+                os.environ[key] = value
+
+
+load_env()
+SERVER_IP = os.getenv('SERVER_IP')
+if not SERVER_IP:
+    raise RuntimeError('SERVER_IP não definido. Edite o arquivo .env e defina SERVER_IP.')
 PORT = 5000
 
 

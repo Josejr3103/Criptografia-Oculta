@@ -9,8 +9,3 @@ def decript_cesar(texto: str, chave: int) -> str:
             codigo = 127 - ((32 - codigo) % (126 - 32 + 1))
         decriptado.append(chr(codigo))
     return ''.join(decriptado)
-
-def main(data: str, chave: int) -> None:
-    mensagem_decriptada = decript_cesar(data, chave)
-    print("[+] Mensagem descriptografada: {}".format(mensagem_decriptada))
-    return mensagem_decriptada

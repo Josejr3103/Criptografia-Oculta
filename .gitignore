@@ -1,0 +1,29 @@
+# Python cache and bytecode files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment directories
+venv/
+.env/
+.env
+
+# IDE and editor folders
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs and temporary files
+*.log
+*.tmp
+*.temp
+
+# Python packaging
+pip-wheel-metadata/
+*.egg-info/
+
+# Notebook checkpoints
+.ipynb_checkpoints/

@@ -1,7 +1,7 @@
 import socket
 import time
 
-SERVER_IP = '192.168.100.29'  # Substitua pelo IP do servidor
+SERVER_IP = '0.0.0.0'  # Substitua pelo IP do servidor
 PORT = 5000
 
 

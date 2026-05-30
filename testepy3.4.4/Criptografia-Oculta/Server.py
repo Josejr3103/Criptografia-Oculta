@@ -19,8 +19,7 @@ while True:
     print("\n[*] Tentando descriptografar com chaves de 0 a 100:")
     for chave in range(101):
         mensagem_descriptografada = decript_cesar(data, chave)
-        # Verifica se a mensagem contém apenas letras a-z (válida)
-        if mensagem_descriptografada.isalpha() or mensagem_descriptografada.isalpha():
+        if mensagem_descriptografada.isalpha() and mensagem_descriptografada.islower():
             print('  Chave [{}]: {}'.format(chave, mensagem_descriptografada))
     
     print()
